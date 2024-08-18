@@ -73,6 +73,13 @@ GEM
       tzinfo (~> 2.0, >= 2.0.5)
     ast (2.4.2)
     base64 (0.2.0)
+    better_html (2.1.1)
+      actionview (>= 6.0)
+      activesupport (>= 6.0)
+      ast (~> 2.0)
+      erubi (~> 1.4)
+      parser (>= 2.4)
+      smart_properties
     bigdecimal (3.1.8)
     bindex (0.8.1)
     bootsnap (1.18.4)
@@ -256,6 +263,9 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.32.1)
       parser (>= 3.3.1.0)
+    rubocop-erb (0.5.3)
+      better_html
+      rubocop (~> 1.45)
     rubocop-minitest (0.35.1)
       rubocop (>= 1.61, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
@@ -279,6 +289,7 @@ GEM
     securerandom (0.3.1)
     shoulda-matchers (6.4.0)
       activesupport (>= 5.2.0)
+    smart_properties (1.17.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -346,6 +357,7 @@ DEPENDENCIES
   rails (~> 7.2.0)
   redis (>= 4.0.1)
   rspec-rails (~> 6.1)
+  rubocop-erb
   rubocop-rails-omakase
   searchkick (~> 5.3)
   shoulda-matchers

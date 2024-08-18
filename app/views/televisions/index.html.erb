@@ -3,14 +3,12 @@
     <div class="w-full sm:w-1/2">
       <h1 class="text-2xl font-bold">Televisions</h1>
     </div>
-
     <div class="w-full sm:w-1/2 text-right">
       <%= link_to new_television_path, class: 'btn btn-primary bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' do %>
         Add New Television
       <% end %>
     </div>
   </div>
-
   <div class="flex flex-wrap mt-20">
     <div class="w-full sm:w-1/6 text-sm">
       <h6 class="font-semibold">Year</h6>
@@ -24,9 +22,7 @@
           (<%= bucket["doc_count"] %>)
         </div>
       <% end %>
-
       <br/>
-
       <h6 class="font-semibold">Brand</h6>
       <% @televisions.aggs["brand"]["buckets"].sort_by{ |b| b["key"] }.each do |bucket| %>
         <div>
@@ -38,9 +34,7 @@
           (<%= bucket["doc_count"] %>)
         </div>
       <% end %>
-
       <br/>
-
       <h6 class="font-semibold">Size</h6>
       <% @televisions.aggs["size"]["buckets"].sort_by{ |b| b["key"] }.each do |bucket| %>
         <div>
@@ -52,9 +46,7 @@
           (<%= bucket["doc_count"] %>)
         </div>
       <% end %>
-
       <br/>
-
       <h6 class="font-semibold">Display</h6>
       <% @televisions.aggs["display"]["buckets"].sort_by{ |b| b["key"] }.each do |bucket| %>
         <div>
@@ -66,9 +58,7 @@
           (<%= bucket["doc_count"] %>)
         </div>
       <% end %>
-
       <br/>
-
       <h6 class="font-semibold">Price</h6>
       <% @televisions.aggs["price"]["buckets"].sort_by{ |b| b.fetch("from", 0) }.each do |bucket| %>
         <div>
@@ -80,7 +70,6 @@
           (<%= bucket["doc_count"] %>)
         </div>
       <% end %>
-
       <%= form_with method: :get, local: true, html: { class: "flex flex-wrap mt-4" } do |form| %>
         <div class="w-full sm:w-1/2 mb-2">
           <%= form.number_field :price_from, value: params[:price_from], placeholder: "$Min", class: "form-control w-full" %>
@@ -93,7 +82,6 @@
         </div>
       <% end %>
     </div>
-
     <div class="w-full sm:w-5/6">
       <div class="overflow-x-auto">
         <table class="min-w-full bg-white border border-gray-200">
@@ -107,7 +95,6 @@
               <th class="px-4 py-2 border-b">Year</th>
             </tr>
           </thead>
-
           <tbody>
             <% @televisions.each do |television| %>
               <%= content_tag :tr, id: dom_id(television), class: "hover:bg-gray-100" do %>

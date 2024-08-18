@@ -63,3 +63,5 @@ gem "searchkick", "~> 5.3"
 gem "faker", "~> 3.4"
 
 gem "elasticsearch", "~> 8.15"
+
+gem "rubocop-erb"
