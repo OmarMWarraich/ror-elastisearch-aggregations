@@ -50,7 +50,12 @@ end
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+end
+
+group :development, :test do
   gem "rspec-rails", "~> 6.1"
   gem "factory_bot_rails"
   gem "shoulda-matchers"
 end
+
+gem "searchkick", "~> 5.3"
