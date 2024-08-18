@@ -14,7 +14,7 @@
 
       <a href="/" class="flex ms-2 md:me-24">
           <%= image_tag 'logo.svg', class: "h-8 me-3", alt: "logo" %>
-          <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">SearchKick</span>
+          <span class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">Aggregations</span>
         </a>
       </div>
       <div class="flex items-center">
@@ -58,21 +58,28 @@
 <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
    <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
       <ul class="space-y-2 font-medium">
-         <li>
-            <div class="flex md:order-2">
-        
-        <div class="relative md:block">
-          <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
-            </svg>
-            <span class="sr-only">Search icon</span>
-          </div>
-          <input type="text" id="search-navbar" class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search...">
-        </div>
-        
-      </div>
-         </li>
+
+<li>
+  <%= form_tag televisions_path, method: :get, class: "flex md:order-2" do %>
+    <div class="flex-col">
+  <div class="relative md:block">
+    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+      <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+      </svg>
+      <span class="sr-only">Search icon</span>
+    </div>
+    <%= text_field_tag :q, nil, placeholder: "Search...", id: "search-navbar", class: "block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+  </div>
+  <%= text_field_tag :year, nil, placeholder: "Year", class: "block w-full p-2 mt-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+  <%= text_field_tag :size, nil, placeholder: "Size", class: "block w-full p-2 mt-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+  <%= text_field_tag :price_from, nil, placeholder: "Price From", class: "block w-full p-2 mt-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+  <%= text_field_tag :price_to, nil, placeholder: "Price To", class: "block w-full p-2 mt-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
+  <%= submit_tag "Search", class: "block w-full p-2 mt-2 text-sm text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:ring-blue-500 focus:border-blue-500" %>
+  </div>
+<% end %>
+</li>
+
          <li>
   <%= link_to root_path, class: 'flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group' do %>
     <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 18 18">
@@ -80,6 +87,14 @@
     </svg>
     <span class="flex-1 ms-3 whitespace-nowrap">Home</span>
     <span class="inline-flex items-center justify-center px-2 ms-3 text-sm font-medium text-gray-800 bg-gray-100 rounded-full dark:bg-gray-700 dark:text-gray-300">Pro</span>
+  <% end %>
+</li>
+      <li>
+  <%= link_to televisions_path, class: 'flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group' do %>
+    
+
+    <%= image_tag 'tv-logo.svg', class: "flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white" %>
+    <span class="flex-1 ms-3 whitespace-nowrap">Televisions</span>
   <% end %>
 </li>
          <li>

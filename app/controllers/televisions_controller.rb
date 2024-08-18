@@ -15,7 +15,8 @@ class TelevisionsController < ApplicationController
     args[:price][:lte] = params[:price_to] if params[:price_to].present?
 
     price_ranges = [ { to: 500 }, { from: 500, to: 1000 }, { from: 1000, to: 2000 }, { from: 2000 } ]
-    @televisions = Television.search "*", where: args, aggs: { brand: {}, year: {}, size: {}, display: {}, price: { ranges: price_ranges } }
+    query = params[:q].presence || "*"
+    @televisions = Television.search(query, where: args, aggs: { brand: {}, year: {}, size: {}, display: {}, price: { ranges: price_ranges } })
   end
 
   # GET /televisions/1
