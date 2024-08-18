@@ -59,3 +59,5 @@ group :development, :test do
 end
 
 gem "searchkick", "~> 5.3"
+
+gem "faker", "~> 3.4"
