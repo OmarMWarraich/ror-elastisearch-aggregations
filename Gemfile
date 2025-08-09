@@ -58,7 +58,7 @@ group :development, :test do
   gem "shoulda-matchers"
 end
 
-gem "searchkick", "~> 5.3"
+gem "searchkick", "~> 5.4"
 
 gem "faker", "~> 3.4"
 

@@ -283,7 +283,7 @@ GEM
       rubocop-performance
       rubocop-rails
     ruby-progressbar (1.13.0)
-    searchkick (5.3.1)
+    searchkick (5.4.0)
       activemodel (>= 6.1)
       hashie
     securerandom (0.3.1)
@@ -359,7 +359,7 @@ DEPENDENCIES
   rspec-rails (~> 7.0)
   rubocop-erb
   rubocop-rails-omakase
-  searchkick (~> 5.3)
+  searchkick (~> 5.4)
   shoulda-matchers
   sprockets-rails
   stimulus-rails
